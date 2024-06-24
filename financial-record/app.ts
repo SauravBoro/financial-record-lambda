@@ -5,7 +5,9 @@ import { assessRisk } from './src/riskAssessment';
 import { enrichData } from './src/dataEnrichment';
 import path from 'path'
 import * as fs from 'fs'
+import * as AWS from 'aws-sdk'
 
+//const S3 = new AWS.S3();
 /**
  *
  * Event doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format
@@ -38,7 +40,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent): Promise<APIGat
 
         const encryptedData = await encryptData(anonymizedDataString);
 
-        const filePath = path.join('/tmp', `${transaction.transactionId}.json`);
+        const filePath = path.join('./', `${transaction.transactionId}.json`);
         fs.writeFileSync(filePath, JSON.stringify(encryptedData));
         //await s3.putObject({
         //    Bucket: bucketName,
