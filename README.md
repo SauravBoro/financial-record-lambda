@@ -42,7 +42,7 @@ The SAM CLI installs dependencies defined in `financial-record/package.json`, co
 
 
 ```bash
-financial-record-lambda$ sam local invoke HelloWorldFunction --event events/event.json
+financial-record-lambda$ sam local invoke -e events/event.json
 ```
 
 ## Unit tests
