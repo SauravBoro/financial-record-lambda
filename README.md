@@ -38,7 +38,7 @@ Build your application with the `sam build` command.
 financial-record-lambda$ sam build
 ```
 
-The SAM CLI installs dependencies defined in `financial-record/package.json`, compiles TypeScript with esbuild, creates a deployment package, and saves it in the `.aws-sam/build` folder.
+The SAM CLI installs dependencies defined in `financial-record-lambda/package.json`, compiles TypeScript with esbuild, creates a deployment package, and saves it in the `.aws-sam/build` folder.
 
 
 ```bash
